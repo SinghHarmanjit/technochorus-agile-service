@@ -59,12 +59,21 @@ functions:
     events:
       - http:
           method: get
-          path: agile/tasks
+          path: api/agile/tasks
           private: true
-
+          cors:
+            origin: 'https://technochorus.com'
+            headers:
+              - Content-Type
+              - X-Amz-Date
+              - Authorization
+              - X-Api-Key
+              - X-Amz-User-Agent
+              - Authorization
+            allowCredentials: true
 #    Define function environment variables here
     environment:
-      TASKS: '{"tasks":[{"id":"1","taskName":"Data Scientist","description":"IBM Certified Data Scientist","taskOwner":"HS","dueDate":"Dec-2021","stage":"Wishlist"},{"id":"2","taskName":"AWS","description":"Create website","taskOwner":"HS","dueDate":"Oct-2020","stage":"In Progress"},{"id":"3","taskName":"Professional Exam","description":"AWS Certified Architect","taskOwner":"HS","dueDate":"Mar-2021","stage":"Backlog"},{"id":"4","taskName":"Associate Exam","description":"AWS Certified Architect","taskOwner":"HS","dueDate":"Jun-2020","stage":"Completed"},{"id":"5","taskName":"Containers","description":"Docker, Kubernetes","taskOwner":"HS","dueDate":"Jun-2021","stage":"Backlog"}]}'
+      TASKS: '{"tasks":[{"id":"1","taskName":"Architecture","description":"TOGAF Certification","taskOwner":"HS","dueDate":"Dec-2021","stage":"Wishlist"},{"id":"1","taskName":"Data Scientist","description":"IBM Certified Data Scientist","taskOwner":"HS","dueDate":"Dec-2021","stage":"Wishlist"},{"id":"2","taskName":"AWS","description":"Create website","taskOwner":"HS","dueDate":"Oct-2020","stage":"Completed"},{"id":"3","taskName":"Professional Exam","description":"AWS Certified Architect","taskOwner":"HS","dueDate":"Jun-2021","stage":"Backlog"},{"id":"4","taskName":"Associate Exam","description":"AWS Certified Architect","taskOwner":"HS","dueDate":"Jun-2020","stage":"Completed"},{"id":"5","taskName":"Containers","description":"Docker, Kubernetes","taskOwner":"HS","dueDate":"Jan-2021","stage":"In Progress"}]}'
 
 custom:
   customDomain:
